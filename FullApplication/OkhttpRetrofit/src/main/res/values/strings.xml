@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">OkhttpRetrofit</string>
+
+
+    <string name="no_network">无可用网络</string>
+    <string name="network_exception">无法连接到服务器</string>
+    <string name="network_broken">当前网络不可用</string>
+    <string name="network_timeout">操作超时</string>
+    <string name="network_un_enable">当前网络不可用，请检查你的网络设置</string>
+    <string name="action_successful">操作成功</string>
+    <string name="action_failed">操作失败</string>
+</resources>

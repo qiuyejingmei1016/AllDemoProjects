@@ -1,0 +1,26 @@
+ext {
+    android = [
+            compileSdkVersion: 25,
+            buildToolsVersion: "28.0.3",
+            minSdkVersion    : 15,
+            targetSdkVersion : 23
+    ]
+
+    //业务地址
+    urlSetting = [
+            ethernet_addr: "\"http://xlb.ipipa.cn\"",
+            dev_addr     : "\"http://xlb.ipipa.cn\"",
+            school_addr  : "\"https://m.vxiao.cn\"",
+            tyd_qdmy_addr: "\"https://web.vxiao.cn\""
+    ]
+
+    //存储目录
+    userDataDir = [
+            "user_data_dir_phone": "\"ConTest_Phone\"",
+            "user_data_dir_hd"   : "\"ConTest_HD\"",
+    ]
+
+    userLogDir = [
+            "user_log_data_dir": "\"ConTest_LOG\"",
+    ]
+}

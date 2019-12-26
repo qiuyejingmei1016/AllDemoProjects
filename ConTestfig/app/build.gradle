@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+
+apply from: "config.gradle"
+def tcproject = project.ext
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '28.0.3'
+
+    //数据类型
+    def bool = "boolean"
+    def string = "String"
+
+    def OFFICAL_VERSION = "OFFICAL_VERSION"
+    def LOG_DEBUG = "LOG_DEBUG"
+    def USER_DATA_DIR = "USER_DATA_DIR"
+    def LOGIN_INTERNET_ADDR = "LOGIN_INTERNET_ADDR"
+
+
+    def user_dir = tcproject.userDataDir
+
+    defaultConfig {
+        applicationId "com.yyh.contestfig"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {//debug版本的配置
+//            buildConfigField "boolean", "LOG_DEBUG", "true"
+            buildConfigField(bool, OFFICAL_VERSION, "false")
+            buildConfigField(bool, LOG_DEBUG, "true")
+            buildConfigField(string, USER_DATA_DIR, user_dir.user_data_dir_phone)
+            //versionName后边添加"-debug"后缀
+            versionNameSuffix "-debug"
+            minifyEnabled false
+            zipAlignEnabled true
+//            shrinkResources true
+        }
+        //release版本的配置
+        release {
+            // 不显示Log
+//            buildConfigField "boolean", "LOG_DEBUG", "false"
+            buildConfigField(bool, OFFICAL_VERSION, "false")
+            buildConfigField(bool, LOG_DEBUG, "false")
+            buildConfigField(string, USER_DATA_DIR, user_dir.user_data_dir_phone)
+            versionNameSuffix ""
+            //混淆后的zip优化，默认为true
+            zipAlignEnabled true
+            // 移除无用的resource文件
+//            shrinkResources true
+            //启用混淆
+            minifyEnabled true
+            //混淆配置文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+//    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+//        exclude group: 'com.android.support', module: 'support-annotations'
+//    })
+    implementation 'com.android.support:appcompat-v7:25.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+}

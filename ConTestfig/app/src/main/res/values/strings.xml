@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">测试Demo</string>
+
+    <string name="permission_setting">去设置</string>
+    <string name="permission_title">权限设置</string>
+    <string name="permission_hint">在设置-应用-%s—权限中开启</string>
+    <string name="permission_camera">相机权限</string>
+    <string name="permission_read_contacts">通讯录权限</string>
+    <string name="permission_record_audio">麦克风权限</string>
+    <string name="permission_access_fine_location">位置信息权限</string>
+    <string name="permission_read_phone_state">电话权限</string>
+    <string name="permission_write_external_storage">储存空间权限</string>
+    <string name="cancel">取消</string>
+    <string name="ok">确定</string>
+
+    <string name="permission_useage_camera">以正常使用扫码、拍照等功能</string>
+    <string name="permission_useage_contacts">以正常使用</string>
+    <string name="permission_useage_audio">以正常使用录音等功能</string>
+    <string name="permission_useage_location">以正常使用定位功能</string>
+    <string name="permission_useage_state">%s使用电话权限确定本机号码和设备的ID,以保证账号登陆的安全性</string>
+    <string name="permission_useage">以正常使用%s功能</string>
+
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="options_dialog_width">280dp</dimen>
+    <dimen name="alert_dialog_width">280dp</dimen>
+
+
+    <dimen name="welcome_logo_margin_top">153.33dp</dimen>
+    <dimen name="welcome_copyright_margin_bottom">26.66dp</dimen>
+
+</resources>

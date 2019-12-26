@@ -1,0 +1,194 @@
+apply plugin: 'com.android.application'
+
+// 打包时间
+def releaseTime() {
+    return new Date().format("yyyyMMddHH", TimeZone.getTimeZone("UTC"))
+}
+
+apply from: "config.gradle"
+def tcproject = project.ext
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '28.0.3'
+
+    //数据类型
+    def bool = "boolean"
+    def string = "String"
+//    def LOG_DEBUG = "LOG_DEBUG"
+    def USER_DATA_DIR = "USER_DATA_DIR"
+    def USER_LOG_DIR = "USER_LOG_DIR"
+    //存储目录
+    def user_dir = tcproject.userDataDir
+    def user_log_dir = tcproject.userLogDir
+
+    //去掉MEAT-INF里边指定的文件,有时候不同jar的MEAT-INF里边的文件会重复导致打包报错
+    packagingOptions {
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
+
+    lintOptions {
+        disable 'InvalidPackage'
+        //即使报错也不会停止打包
+        abortOnError false
+        //打包release版本的时候进行检测
+        checkReleaseBuilds false
+    }
+    //关闭Android Studio的PNG合法性检查的
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
+
+
+    defaultConfig {
+        applicationId "com.yyh.buildconfigdemo"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        flavorDimensions ""
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        //当方法数超过65535(方法的索引使用的是一个short值，而short最大值是65535)的时候允许打包成多个dex文件，动态加载dex。这里面坑很深啊
+        multiDexEnabled true
+        // 设置只支持中文
+        resConfigs "zh"
+        // 默认渠道
+        manifestPlaceholders = [installChanel: "guanwang"]
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    //multiDex的一些相关配置，这样配置可以让你的编译速度更快
+//    dexOptions {
+//        //开启incremental dexing,优化编译效率，这个功能android studio默认是关闭的。
+//        incremental true
+//        //增加java堆内存大小
+//        javaMaxHeapSize "4g"
+//        //让它不要对Lib做preDexing
+//        preDexLibraries = false
+//
+//        dexInProcess true
+//    }
+
+    sourceSets {
+//        androidTest.setRoot('tests')
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    //签名文件配置信息
+    signingConfigs {
+        debug {
+
+        }
+
+        release {
+            storeFile file('./dl-sign.jks')
+            storePassword "danluo"
+            keyAlias "dl"
+            keyPassword "danluo"
+        }
+    }
+
+    buildTypes {
+        debug {//debug版本的配置
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            buildConfigField(string, USER_DATA_DIR, user_dir.user_data_dir_phone)
+            buildConfigField(string, USER_LOG_DIR, user_log_dir.user_log_data_dir)
+            //versionName后边添加"-debug"后缀
+            versionNameSuffix "-debug"
+            minifyEnabled false
+            zipAlignEnabled true
+//            shrinkResources true
+            signingConfig signingConfigs.release
+        }
+        //release版本的配置
+        release {
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            buildConfigField(string, USER_DATA_DIR, user_dir.user_data_dir_phone)
+            buildConfigField(string, USER_LOG_DIR, user_log_dir.user_log_data_dir)
+            versionNameSuffix ""
+            //混淆后的zip优化，默认为true
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            //启用混淆
+            minifyEnabled true
+            //混淆配置文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+
+            //自定义生成的apk的名称
+//            applicationVariants.all { variant ->
+//                variant.outputs.each { output ->
+//                    def outputFile = output.outputFile
+//                    /* if (variant.productFlavors[0].name == "internal") {
+//                     } else {
+//                     }*/
+//                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+//                        // 输出apk名称为merchant_v1.7.0_20161202_A-guanwang.apk
+//                        def fileName = "App_v${variant.productFlavors[0].name}" +
+//                                "_${defaultConfig.versionName}" +
+//                                "_${defaultConfig.versionCode}" +
+//                                "_${releaseTime()}.apk"
+//                        output.outputFile = new File(outputFile.parent, fileName)
+//                    }
+//                }
+//            }
+
+            //过滤掉unaligned的包
+            /*variant.assemble.doLast {
+                variant.outputs.each { output ->
+                    println "-----------------------------------------"
+                    println "aligned " + output.outputFile
+                    println "unaligned " + output.packageApplication.outputFile
+                    File unaligned = output.packageApplication.outputFile;
+                    File aligned = output.outputFile
+                    if (!unaligned.getName().equalsIgnoreCase(aligned.getName())) {
+                        println "deleting " + unaligned.getName()
+                        unaligned.delete()
+                    }
+                }
+            }*/
+        }
+    }
+
+    //应用渠道
+    productFlavors {
+        "A-guanwang" {
+            manifestPlaceholders = [installChanel: "官网"]
+        }
+        "A-myapp" {
+            manifestPlaceholders = [installChanel: "应用宝"]
+        }
+        "B-hicloud" {
+            manifestPlaceholders = [installChanel: "华为"]
+        }
+        "B-xiaomi" {
+            manifestPlaceholders = [installChanel: "小米"]
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+//    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+//        exclude group: 'com.android.support', module: 'support-annotations'
+//    })
+//    implementation files('libs/org.apache.http.legacy.jar')
+    implementation 'com.android.support:appcompat-v7:25.4.0'
+    implementation 'com.android.support:design:25.4.0'
+    implementation 'com.android.support:support-vector-drawable:25.4.0'
+//    testImplementation 'junit:junit:4.12'
+}

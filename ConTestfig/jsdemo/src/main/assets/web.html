@@ -1,0 +1,30 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <script type="text/javascript">
+
+    function javaCalljs() {
+	    document.getElementById("content").innerHTML = "<br\>JAVA调用了JS的无参函数";
+    }
+
+    function javaCalljsWith(arg) {
+	    document.getElementById("content").innerHTML = ("<br\>"+arg);
+    }
+
+    function javaCalljsAlert() {
+        alert("Android调用了JS的javaCalljsAlert方法");
+    }
+    </script>
+</head>
+<body>
+HTML 内容显示 <br/>
+<h1>
+    <div id="content">内容显示</div>
+</h1>
+<br/>
+<input type="button" value="点击调用java代码" onclick="jsObj.startFunction()"/>
+<br/>
+<input type="button" value="点击调用java代码并传数给java" onclick="jsObj.startFunction('我就是H5传递的参数,哈哈哈哈\n')"/>
+<br/>
+</body>
+</html>

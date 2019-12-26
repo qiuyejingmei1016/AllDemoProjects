@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MediaRecorderDemo</string>
+    <string name="class_recorder_several_seconds_left">距离录制结束还有%d秒</string>
+</resources>

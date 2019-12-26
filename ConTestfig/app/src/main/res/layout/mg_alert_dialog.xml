@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yyh.configtest.ui.view.MGDialogLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/dialog_layout"
+    style="@style/mg_alert_dialog"
+    android:layout_gravity="center">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/mg_alert_dialog_title" />
+
+    <ImageView
+        android:id="@+id/title_divider"
+        style="@style/mg_alert_dialog_title_divider" />
+
+    <TextView
+        android:id="@+id/content"
+        style="@style/mg_alert_dialog_content" />
+
+    <ViewStub
+        android:id="@+id/progress_layout_stub"
+        style="@style/mg_alert_dialog_progress_layout"
+        android:layout="@layout/mg_alert_dialog_progress_layout" />
+
+    <LinearLayout
+        android:id="@+id/view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:orientation="vertical" />
+
+    <ImageView
+        android:id="@+id/btn_layout_divider"
+        style="@style/mg_alert_dialog_btn_layout_divider" />
+
+    <LinearLayout
+        android:id="@+id/btn_layout"
+        style="@style/mg_alert_dialog_btn_layout">
+
+        <Button
+            android:id="@+id/negative"
+            style="@style/mg_alert_dialog_btn_negative" />
+
+        <ImageView
+            android:id="@+id/btn_divider"
+            style="@style/mg_alert_dialog_btn_divider" />
+
+        <Button
+            android:id="@+id/positive"
+            style="@style/mg_alert_dialog_btn_positive" />
+    </LinearLayout>
+</com.yyh.configtest.ui.view.MGDialogLayout>

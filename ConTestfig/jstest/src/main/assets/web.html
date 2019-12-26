@@ -1,0 +1,36 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+    <script type="text/javascript">
+         var info = {
+        "fileurl":"http://vip.anychat.cn/irecord2/2.zip",
+        "fileid":"20170518",
+        "filemd5":"b349819bca1d1a4dc85df9a31829e934",
+        "filetype":"1"
+    };
+
+    var jsons1 = '{"username":"123456", "ip":"120.76.248.33","port":"8906","fileinfo":"info"}';
+
+    var jsons2 = {
+        "username":"123456",
+        "ip":"120.76.248.33",
+        "port":"8906",
+        "fileinfo":info,
+    },
+    json=JSON.stringify(jsons2);
+
+    </script>
+</head>
+<body>
+HTML 内容显示 <br/>
+<h1>
+    <div id="content">网页内容显示..................................</div>
+</h1>
+<br/>
+<input type="button" value="点击唤起App" onclick="yyh.startFunction()"/>
+<input type="button" value="点击唤起App jsons1" onclick="yyh.startFunction(jsons1)"/>
+<input type="button" value="点击唤起App jsons2" onclick="yyh.startFunction2(json)"/>
+</body>
+</html>
+<SCRIPT Language=VBScript>
+</SCRIPT>

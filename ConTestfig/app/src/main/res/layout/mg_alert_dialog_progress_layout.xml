@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/progress_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@style/mg_alert_dialog_progress_bar" />
+
+    <TextView
+        android:id="@+id/progress_text"
+        style="@style/mg_alert_dialog_progress_text" />
+
+    <TextView
+        android:id="@+id/err_text"
+        style="@style/mg_alert_dialog_progress_err_text" />
+</RelativeLayout>
