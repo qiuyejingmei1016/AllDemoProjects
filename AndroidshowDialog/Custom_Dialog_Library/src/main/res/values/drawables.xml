@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="bg_item_normal">#FFFFFF</drawable>
+    <drawable name="bg_item_pressed">#F8F8F8</drawable>
+</resources>
