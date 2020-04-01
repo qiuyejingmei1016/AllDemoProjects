@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/title_bar_view"
+        android:layout_width="match_parent"
+        android:layout_height="45.33dp"
+        android:background="@color/blue_title_bar">
+
+    <TextView
+            android:id="@+id/title_text"
+            style="@style/title_view_title_text"/>
+    <ImageButton
+            android:id="@+id/title_left_img_btn"
+            style="@style/title_view_left_img_btn"/>
+    <ImageButton
+            android:visibility="invisible"
+            android:id="@+id/title_right_img_btn"
+            style="@style/title_bar_right_img_btn"/>
+</RelativeLayout>

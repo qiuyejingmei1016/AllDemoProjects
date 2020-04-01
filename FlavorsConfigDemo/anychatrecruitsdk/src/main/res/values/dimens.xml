@@ -1,0 +1,41 @@
+<resources>
+
+    <dimen name="sdk_title_bar_height">45.33dp</dimen>
+    <dimen name="sdk_title_bar_padding">10dp</dimen>
+
+    <dimen name="sdk_dp_3">3dp</dimen>
+    <dimen name="sdk_dp_5">5dp</dimen>
+    <dimen name="sdk_dp_8">8dp</dimen>
+    <dimen name="sdk_dp_10">10dp</dimen>
+    <dimen name="sdk_dp_12">12dp</dimen>
+    <dimen name="sdk_dp_15">15dp</dimen>
+    <dimen name="sdk_dp_17">17dp</dimen>
+    <dimen name="sdk_dp_20">20dp</dimen>
+    <dimen name="sdk_dp_25">25dp</dimen>
+    <dimen name="sdk_dp_30">30dp</dimen>
+    <dimen name="sdk_dp_35">35dp</dimen>
+    <dimen name="sdk_dp_40">40dp</dimen>
+    <dimen name="sdk_dp_45">45dp</dimen>
+    <dimen name="sdk_dp_50">50dp</dimen>
+    <dimen name="sdk_dp_60">60dp</dimen>
+    <dimen name="sdk_dp_80">80dp</dimen>
+    <dimen name="sdk_dp_108">108dp</dimen>
+    <dimen name="sdk_dp_110">110dp</dimen>
+    <dimen name="sdk_dp_120">120dp</dimen>
+    <dimen name="sdk_dp_130">130dp</dimen>
+    <dimen name="sdk_dp_144">144dp</dimen>
+
+    <dimen name="sdk_sp_12">12sp</dimen>
+    <dimen name="sdk_sp_15">15sp</dimen>
+    <dimen name="sdk_sp_16">16sp</dimen>
+    <dimen name="sdk_sp_17">17sp</dimen>
+    <dimen name="sdk_sp_18">18sp</dimen>
+    <dimen name="sdk_sp_19">19sp</dimen>
+    <dimen name="sdk_sp_20">20sp</dimen>
+    <dimen name="sdk_sp_50">50sp</dimen>
+    <dimen name="sp_title_bar_text">@dimen/sdk_sp_18</dimen>
+
+    <dimen name="sdk_px_1">1px</dimen>
+    <dimen name="sdk_px_2">2px</dimen>
+
+</resources>

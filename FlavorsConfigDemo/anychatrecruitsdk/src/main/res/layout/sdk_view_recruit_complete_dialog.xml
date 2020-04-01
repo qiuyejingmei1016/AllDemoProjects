@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="320dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/sdk_dialog_white_bg"
+            android:gravity="center"
+            android:orientation="vertical">
+
+        <ImageView
+                android:layout_width="240dp"
+                android:layout_height="330dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/sdk_ico_recruit_complete"/>
+        <LinearLayout
+                android:layout_width="240dp"
+                android:layout_height="320dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:gravity="center"/>
+
+            <TextView
+                    android:id="@+id/sdk_title_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/sdk_dp_20"
+                    android:layout_marginRight="@dimen/sdk_dp_20"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="面试已完成"
+                    android:textColor="@color/sdk_white"
+                    android:textSize="@dimen/sdk_sp_19"
+                    android:textStyle="bold"/>
+
+            <!--内容view-->
+            <TextView
+                    android:id="@+id/sdk_content_tip_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="@dimen/sdk_dp_20"
+                    android:layout_marginRight="@dimen/sdk_dp_20"
+                    android:layout_weight="1"
+                    android:gravity="left|center"
+                    android:lineSpacingMultiplier="1.1"
+                    android:text="面试结果我们将会以邮件或短信方式通知，非常感谢您来参加此次面试！"
+                    android:textColor="@color/sdk_back_color"
+                    android:textSize="@dimen/sdk_sp_16"/>
+
+            <!--确定view(单按钮)-->
+            <RelativeLayout
+                    android:id="@+id/sdk_bottom_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="@dimen/sdk_dp_30"
+                    android:layout_marginRight="@dimen/sdk_dp_30"
+                    android:layout_marginBottom="@dimen/sdk_dp_10"
+                    android:gravity="center_horizontal|center_vertical">
+                <TextView
+                        android:id="@+id/sdk_btn_single_confirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:background="@drawable/sdk_bg_btn_round_style"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="@string/sdk_recruit_confirm"
+                        android:textColor="@color/sdk_white"
+                        android:textSize="16sp"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="sdk_recruit_confirm">确定</string>
+    <string name="sdk_recruit_cancel">取消</string>
+
+    <string name="sdk_recruit_queue_wait_title">排队</string>
+
+    <string name="sdk_recruit_end_queuing">结束排队</string>
+    <string name="sdk_recruit_temp_pendeing">临时挂起</string>
+    <string name="sdk_recruit_end_call">挂断</string>
+
+    <string name="sdk_recruit_calling">正在呼叫面试官</string>
+    <string name="sdk_recruit_send_content_tip">请输入发送内容</string>
+    <string name="sdk_recruit_pending_tip">您临时有事，挂起了面试，\n是否恢复面试？</string>
+    <string name="sdk_recruit_prepare_tip">即将为您接入面试官，\n请提前做好准备！</string>
+    <string name="sdk_recruit_pending_dialog_text_tip">是否确定临时挂起排队？\n确定后您将退出队列，恢\n复时可重新排队！</string>
+    <string name="sdk_recruit_video_interviewer_jod">正在与%1$s面试中</string>
+    <string name="sdk_recruit_mode_switch_video">当前网络较好，面试官已切换视频通话模式</string>
+    <string name="sdk_recruit_mode_switch_audio">当前网络较差，面试官已切换语音通话模式</string>
+</resources>

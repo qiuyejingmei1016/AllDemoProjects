@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/sdk_dialog_white_bg"
+            android:orientation="vertical">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/sdk_dp_20"
+                android:src="@drawable/sdk_ico_dialog_tip"/>
+        <!--标题view-->
+        <TextView
+                android:lineSpacingMultiplier="1.3"
+                android:id="@+id/sdk_title_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="@dimen/sdk_dp_20"
+                android:layout_marginRight="@dimen/sdk_dp_20"
+                android:gravity="center"
+                android:paddingTop="@dimen/sdk_dp_20"
+                android:paddingBottom="@dimen/sdk_dp_20"
+                android:textColor="@color/sdk_back_color"
+                android:textSize="@dimen/sdk_sp_17"
+                android:visibility="visible"/>
+
+
+        <!--确定|取消view(并列按钮)-->
+        <LinearLayout
+                android:id="@+id/sdk_level_view"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="@dimen/sdk_dp_10"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"/>
+
+            <TextView
+                    android:id="@+id/sdk_btn_cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/sdk_bg_btn_blue_line_style"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/sdk_dp_5"
+                    android:paddingBottom="@dimen/sdk_dp_5"
+                    android:text="@string/sdk_recruit_cancel"
+                    android:textColor="#2E8DED"
+                    android:textSize="@dimen/sdk_sp_16"/>
+
+            <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"/>
+            <TextView
+                    android:id="@+id/sdk_btn_ok"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/sdk_bg_btn_round_style"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/sdk_dp_5"
+                    android:paddingBottom="@dimen/sdk_dp_5"
+                    android:text="@string/sdk_recruit_confirm"
+                    android:textColor="@color/sdk_white"
+                    android:textSize="@dimen/sdk_sp_16"/>
+            <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"/>
+
+        </LinearLayout>
+
+        <!--确定view(单按钮)-->
+        <RelativeLayout
+                android:id="@+id/sdk_bottom_view"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="@dimen/sdk_dp_10"
+                android:gravity="center_horizontal|center_vertical"
+                android:visibility="gone">
+
+            <TextView
+                    android:id="@+id/sdk_btn_single_confirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sdk_bg_btn_blue_line_style"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/sdk_dp_15"
+                    android:paddingTop="@dimen/sdk_dp_5"
+                    android:paddingRight="@dimen/sdk_dp_15"
+                    android:paddingBottom="@dimen/sdk_dp_5"
+                    android:text="@string/sdk_recruit_cancel"
+                    android:textColor="#2E8DED"
+                    android:textSize="@dimen/sdk_sp_16"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

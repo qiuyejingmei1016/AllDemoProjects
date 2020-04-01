@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <include android:id="@+id/title_bar_view" layout="@layout/title_bar_view"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title_bar_view"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+
+        <!--预约信息-->
+        <TextView
+                style="@style/login_input_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="预约号"
+                android:textSize="18sp"/>
+
+        <!--预约号-->
+        <LinearLayout
+                style="@style/item_style"
+                android:layout_marginTop="8dp">
+
+            <EditText
+                    android:id="@+id/input_reservate_code"
+                    style="@style/login_input_style"
+                    android:hint="请输入预约号"
+                    android:textSize="18sp"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+            android:id="@+id/bt_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/btn_round_style"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="@string/next"
+            android:textColor="#FFFFFF"/>
+</RelativeLayout>

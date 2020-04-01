@@ -1,0 +1,101 @@
+<resources>
+
+    <!-- component theme. -->
+    <style name="sdk_component_theme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/sdk_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/sdk_colorPrimaryDark</item>
+        <item name="colorAccent">@color/sdk_colorAccent</item>
+    </style>
+
+    <!--排队挂起界面主题样式-->
+    <style name="sdk_recruit_pending_theme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/sdk_colorPrimary</item>
+        <item name="colorPrimaryDark">#4a9ced</item>
+        <item name="colorAccent">@color/sdk_colorAccent</item>
+    </style>
+
+    <!--视频界面主题样式-->
+    <style name="sdk_record_video_theme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/sdk_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/sdk_back_color</item>
+        <item name="colorAccent">@color/sdk_colorAccent</item>
+    </style>
+
+    <!--titleBar中间标题文字样式-->
+    <style name="sdk_title_bar_title_text" parent="android:Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:textSize">@dimen/sp_title_bar_text</item>
+        <item name="android:textColor">@color/sdk_title_bar_text_color</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center_horizontal|center_vertical</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+
+    <!--titleBar左边标题文字样式-->
+    <style name="sdk_title_bar_left_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/sdk_title_bar_text_color</item>
+        <item name="android:textSize">@dimen/sdk_sp_16</item>
+    </style>
+
+    <!--titleBar左边图标样式-->
+    <style name="sdk_title_bar_left_img_btn">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:paddingLeft">@dimen/sdk_title_bar_padding</item>
+        <item name="android:paddingTop">@dimen/sdk_title_bar_padding</item>
+        <item name="android:paddingBottom">@dimen/sdk_title_bar_padding</item>
+        <item name="android:background">@null</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:layout_gravity">left|center_vertical</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <!--titleBar右边图标样式-->
+    <style name="sdk_title_bar_right_img_btn">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:padding">@dimen/sdk_title_bar_padding</item>
+        <item name="android:gravity">right|center_vertical</item>
+        <item name="android:layout_gravity">right|center_vertical</item>
+        <item name="android:background">@null</item>
+        <item name="android:layout_alignParentLeft">false</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <!--loadingDialog样式-->
+    <style name="sdk_round_dialog_style">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <!--通用Dialog样式-->
+    <style name="sdk_common_dialog_style" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--<item name="android:windowTitleStyle">@style/dialog_title</item>-->
+        <!--<item name="android:backgroundDimAmount">0.6</item>-->
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+</resources>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+    <!--收到的消息-->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/sdk_left_head_view"
+                android:layout_width="@dimen/sdk_dp_30"
+                android:layout_height="@dimen/sdk_dp_30"
+                android:layout_marginRight="@dimen/sdk_dp_10"
+                android:src="@drawable/sdk_ico_left_avatar"/>
+
+        <LinearLayout
+                android:id="@+id/sdk_left_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/sdk_left_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/sdk_bg_btn_round_style_normal"
+                    android:paddingLeft="@dimen/sdk_dp_5"
+                    android:paddingTop="@dimen/sdk_dp_3"
+                    android:paddingRight="@dimen/sdk_dp_5"
+                    android:paddingBottom="@dimen/sdk_dp_3"
+                    android:textColor="@color/sdk_white"
+                    android:textSize="15sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--发送的消息-->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sdk_dp_5">
+
+        <LinearLayout
+                android:id="@+id/sdk_right_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right">
+
+            <!--<View-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="@dimen/sdk_dp_35"/>-->
+
+            <TextView
+                    android:id="@+id/sdk_right_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/sdk_bg_btn_white_style_normal"
+                    android:paddingLeft="@dimen/sdk_dp_5"
+                    android:paddingTop="@dimen/sdk_dp_3"
+                    android:paddingRight="@dimen/sdk_dp_5"
+                    android:paddingBottom="@dimen/sdk_dp_3"
+                    android:textColor="@color/sdk_first_text_color"
+                    android:textSize="15sp"/>
+
+        </LinearLayout>
+        <ImageView
+                android:id="@+id/sdk_right_head_view"
+                android:layout_width="@dimen/sdk_dp_30"
+                android:layout_height="@dimen/sdk_dp_30"
+                android:layout_marginLeft="@dimen/sdk_dp_10"
+                android:src="@drawable/sdk_ico_right_avatar"/>
+    </LinearLayout>
+
+</LinearLayout>

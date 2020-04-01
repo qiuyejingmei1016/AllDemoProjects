@@ -1,0 +1,125 @@
+apply plugin: 'com.android.application'
+
+//自定义打包时间
+def releaseTime() {
+    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))
+}
+
+//自定义打包apk名
+def apkName() {
+    return "视频面对面体验Demo"
+}
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        //测试版本包名
+//        applicationId "com.bairuitech.anychat.f2fvideo"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        //必须要保证所有的flavor 都属于同一个维度
+        flavorDimensions "default"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    productFlavors {
+        //测试环境渠道
+        EnvironmentTest {
+            applicationId "com.bairuitech.anychat.f2fvideo"
+            //manifest里面的值
+            manifestPlaceholders = [
+                    APP_NAME     : "视频面对面(测试版本)",
+                    CHANNEL_VALUE: "EnvironmentTest",
+                    LOCATION_KEY : "1fbe22b2b2cf696ada6e6adc8115791e"]
+//            buildConfigField "boolean", "ENVIRONMENT_INTERNAL", "false"
+            buildConfigField("String", "BASE_URL", "\"http://120.76.74.249:18080\"")
+        }
+
+        //内测环境渠道
+        EnvironmentInternal {
+            applicationId "com.bairuitech.anychat.f2fvideo_internal_test"
+            //manifest里面的值
+            manifestPlaceholders = [
+                    APP_NAME     : "视频面对面(内测)",
+                    CHANNEL_VALUE: "EnvironmentInternal",
+                    LOCATION_KEY : "dc7a420e5d31d8c7428cbdec698f5335"]
+//            buildConfigField "boolean", "ENVIRONMENT_INTERNAL", "true"
+            buildConfigField("String", "BASE_URL", "\"http://120.76.74.249:18888\"")
+        }
+    }
+
+//    productFlavors.all {
+//        flavor -> flavor.manifestPlaceholders = [CHANNEL_VALUE: name]
+//    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+//                def flavor = variant.productFlavors[0].name
+//                def apkName
+//                if (flavor.equals('Cloud')) {
+//                    apkName = "双录云视频组件云环境Demo";
+//                } else {
+//                    apkName = "双录云视频组件体验环境Demo";
+//                }
+
+                def releaseTime = "${releaseTime()}"
+                def apkName = "${apkName()}"
+                def fileName = "${apkName}_Channel_${variant.productFlavors[0].name}_v${defaultConfig.versionName}_build_${releaseTime}.apk"
+                outputFileName = fileName
+            }
+        }
+    }
+
+    //添加改配置为了解决多个aar包里面包含相同so库文件，导致无法编译问题（后续可能还要做修改）
+    packagingOptions {
+        pickFirst 'lib/armeabi/libanychatcore.so'
+        pickFirst 'lib/armeabi/libaudio_preprocessing.so'
+        pickFirst 'lib/armeabi/libmediacore.so'
+        pickFirst 'lib/armeabi/libmediashow.so'
+        pickFirst 'lib/armeabi/libmediautil_v7.so'
+
+        pickFirst 'lib/arm64-v8a/libanychatcore.so'
+        pickFirst 'lib/arm64-v8a/libaudio_preprocessing.so'
+        pickFirst 'lib/arm64-v8a/libmediacore.so'
+        pickFirst 'lib/arm64-v8a/libmediashow.so'
+        pickFirst 'lib/arm64-v8a/libmediautil_v8.so'
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+
+    //添加远程双录视频组件aar包依赖
+    implementation(name: 'recordcomponentsdk', ext: 'aar')
+    //添加远程招聘组件aar包依赖
+//    implementation(name: 'anychatrecruitsdk', ext: 'aar')
+    implementation project(':anychatrecruitsdk')
+
+    //添加gson依赖
+    implementation 'com.google.code.gson:gson:2.8.2'
+}

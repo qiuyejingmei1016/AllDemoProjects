@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.bairuitech.anychat.f2fvideo">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+
+    <application
+            android:name="com.bairuitech.anychat.f2fvideo.AnyChatVideoApp"
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="${APP_NAME}"
+            android:networkSecurityConfig="@xml/network_security_config"
+            android:theme="@style/AppTheme">
+
+        <!--高德定位配置参数-->
+        <!-- 设置key -->
+        <meta-data
+                android:name="com.amap.api.v2.apikey"
+                android:value="${LOCATION_KEY}"/>
+        <!-- 定位需要的服务 -->
+        <service android:name="com.amap.api.location.APSService"></service>
+
+        <!--用于获取渠道值信息-->
+        <meta-data android:name="CHANNEL_VALUE" android:value="${CHANNEL_VALUE}"></meta-data>
+
+        <activity
+                android:name="com.bairuitech.anychat.f2fvideo.ui.activity.WelcomeActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/welcomeTheme"
+                android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+                android:name="com.bairuitech.anychat.f2fvideo.ui.activity.LoginActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/LoginTheme"/>
+        <activity
+                android:name="com.bairuitech.anychat.f2fvideo.ui.activity.SetActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name="com.bairuitech.anychat.f2fvideo.ui.activity.SelectAppTypeActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/SelectAppTypeTheme"/>
+        <activity
+                android:name="com.bairuitech.anychat.f2fvideo.ui.activity.RecruitReservateInputActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name="com.bairuitech.anychat.f2fvideo.ui.activity.SelectServiceActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name="com.bairuitech.anychat.f2fvideo.ui.activity.ReservateBusinessActivity"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity
+                android:name="com.bairuitech.anychat.f2fvideo.ui.activity.BusinessActivity"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="adjustResize|stateHidden"/>
+    </application>
+</manifest>

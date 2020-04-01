@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.bairuitech.anychat.recruitment">
+
+    <application>
+        <activity
+                android:name=".ui.activity.RecruitQueueActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/sdk_component_theme"/>
+
+        <activity android:name=".ui.activity.RecruitPendingActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/sdk_recruit_pending_theme"/>
+
+        <activity
+                android:name=".ui.activity.RecruitRecordVideoActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:screenOrientation="portrait"
+                android:theme="@style/sdk_record_video_theme"
+                android:windowSoftInputMode="adjustResize"/>
+    </application>
+
+</manifest>

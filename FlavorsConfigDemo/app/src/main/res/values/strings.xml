@@ -1,0 +1,42 @@
+<resources>
+
+    <string name="app_name">视频面对面(测试版本)</string>
+
+    <string name="longin_input_tip">请输入手机号</string>
+    <string name="login_input_phone_error">请检查手机号是否正确</string>
+    <string name="longin_input_appid_tip">请输入商户编码</string>
+    <string name="login">登录</string>
+
+    <string name="longin_input_name">请输入客户名称</string>
+    <string name="longin_input_phone">请输入客户手机</string>
+    <string name="longin_input_idcard_address">请输入证件地址</string>
+    <string name="longin_input_idcard_num">请输入证件号码</string>
+    <string name="select_account_sex1">男</string>
+    <string name="select_account_sex2">女</string>
+    <string name="input_product_name">请输入产品名称</string>
+    <string name="input_product_number">请输入产品编号</string>
+    <string name="input_thirdtrade_num">请输入业务流水号</string>
+
+    <string name="input_channel_code">请输入渠道编码</string>
+    <string name="input_channel_name">请输入渠道名称</string>
+    <string name="input_business_code">请输入业务编码</string>
+    <string name="input_business_name">请输入业务名称</string>
+
+    <string name="next">下一步</string>
+    <string name="select_service_title">双录服务选择</string>
+    <string name="input_reservate_code">请输入预约编码</string>
+
+    <string name="buisness_title">请输入业务信息</string>
+    <string name="save_title">设置</string>
+    <string name="save">保存</string>
+
+    <!-- 远程双录默认内置信息 -->
+    <!--渠道编码-->
+    <string name="channel_code">Channel01</string>
+    <!--业务编码-->
+    <string name="business_code">Business01</string>
+    <!--理财产品-->
+    <string name="product_name">理财产品</string>
+    <!--产品编号-->
+    <string name="product_number">Product01</string>
+</resources>

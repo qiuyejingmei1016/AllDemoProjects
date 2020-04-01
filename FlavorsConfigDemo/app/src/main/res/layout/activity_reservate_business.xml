@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <include layout="@layout/title_bar_view"/>
+
+    <ScrollView
+            android:id="@+id/scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#dddddd"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#dddddd"
+                    android:padding="8dp"
+                    android:text="第三方信息"/>
+
+            <!--业务流水-->
+            <LinearLayout
+                    style="@style/item_style">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="业务流水:"/>
+                <EditText
+                        android:id="@+id/input_thirdtrade_num"
+                        style="@style/login_input_style"
+                        android:hint="@string/input_thirdtrade_num"
+                        android:text="123456"/>
+            </LinearLayout>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#dddddd"
+                    android:padding="8dp"
+                    android:text="客户信息"/>
+
+            <!--账号-->
+            <LinearLayout
+                    style="@style/item_style">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="客户姓名:"/>
+                <EditText
+                        android:id="@+id/input_client"
+                        style="@style/login_input_style"
+                        android:hint="@string/longin_input_name"
+                        android:text="张三"/>
+            </LinearLayout>
+
+            <!--手机号-->
+            <LinearLayout
+                    style="@style/item_style">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="客户手机:"/>
+                <EditText
+                        android:id="@+id/input_phone"
+                        style="@style/login_input_style"
+                        android:hint="@string/longin_input_phone"
+                        android:text="13888888888"/>
+            </LinearLayout>
+
+            <!--证件地址-->
+            <LinearLayout
+                    style="@style/item_style">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="证件地址:"/>
+                <EditText
+                        android:id="@+id/input_idcard_address"
+                        style="@style/login_input_style"
+                        android:hint="@string/longin_input_idcard_address"
+                        android:text="广东省广州市天河区"/>
+            </LinearLayout>
+
+            <!--证件号-->
+            <LinearLayout
+                    style="@style/item_style">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="证件号码:"/>
+                <EditText
+                        android:id="@+id/input_idcard_num"
+                        style="@style/login_input_style"
+                        android:hint="@string/longin_input_idcard_num"
+                        android:maxLength="18"
+                        android:text="532101198906010015"/>
+            </LinearLayout>
+
+            <!--客户性别-->
+            <LinearLayout
+                    style="@style/item_style">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="客户性别:"/>>
+
+                <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:orientation="horizontal"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp">
+
+                    <RadioButton
+                            android:id="@+id/select_male"
+                            style="@style/login_select_account_style"
+                            android:button="@null"
+                            android:checked="true"
+                            android:text="@string/select_account_sex1"/>
+
+                    <RadioButton
+                            android:id="@+id/select_female"
+                            style="@style/login_select_account_style"
+                            android:layout_marginLeft="20dp"
+                            android:text="@string/select_account_sex2"/>
+                </RadioGroup>
+            </LinearLayout>
+
+            <!--预约信息-->
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#dddddd"
+                    android:padding="8dp"
+                    android:text="预约信息"/>
+
+            <!--预约编码-->
+            <LinearLayout
+                    style="@style/item_style">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="预约编码:"/>
+                <EditText
+                        android:id="@+id/input_reservate_code"
+                        style="@style/login_input_style"
+                        android:hint="@string/input_reservate_code"/>
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/bt_next"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/btn_round_style"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:text="@string/next"
+                    android:textColor="#FFFFFF"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

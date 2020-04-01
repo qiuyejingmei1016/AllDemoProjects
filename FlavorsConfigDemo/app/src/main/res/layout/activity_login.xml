@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
+
+        <!--logo-->
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5">
+            <ImageView
+                    android:id="@+id/logo_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@mipmap/ico_login_background"
+                    android:scaleType="fitXY"/>
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="40dp"
+                    android:src="@mipmap/ico_logo"/>
+
+        </RelativeLayout>
+
+        <!--账号信息-->
+        <LinearLayout
+                android:id="@+id/ll_user"
+                android:layout_width="280dp"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+            <!--账号-->
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:minHeight="55dp"
+                    android:padding="10dp">
+
+                <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/ico_login_phone"/>
+                <EditText
+                        android:id="@+id/input_account"
+                        style="@style/login_input_style"
+                        android:hint="@string/longin_input_tip"
+                        android:inputType="number"
+                        android:maxLength="11"/>
+                <ImageView
+                        android:id="@+id/clear_account"
+                        style="@style/input_line_clear"/>
+            </LinearLayout>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:background="#dddddd"/>
+
+            <!--商户编码-->
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:minHeight="55dp"
+                    android:padding="10dp">
+
+                <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/ico_login_appid"/>
+                <EditText
+                        android:id="@+id/input_appid"
+                        style="@style/login_input_style"
+                        android:hint="@string/longin_input_appid_tip"/>
+                <ImageView
+                        android:id="@+id/clear_appid"
+                        style="@style/input_line_clear"/>
+            </LinearLayout>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:background="#dddddd"/>
+        </LinearLayout>
+
+        <!--底部相关-->
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/bt_login"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/btn_round_style"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:text="@string/login"
+                    android:textColor="#FFFFFF"/>
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                    <ImageView
+                            android:id="@+id/set_view"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@mipmap/ico_set"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="佰锐科技AnyChat提供技术支持"
+                            android:textColor="#ffc9caca"/>
+                    <TextView
+                            android:id="@+id/version_info_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#ffc9caca"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

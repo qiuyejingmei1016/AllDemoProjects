@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="sdk_white">#FFFFFF</color>
+    <color name="sdk_back_color">#000000</color>
+    <color name="sdk_trans_grey">#55595e62</color>
+    <color name="sdk_first_text_color">#333333</color>
+
+    <color name="sdk_line_color">#E5E5E5</color>
+    <color name="sdk_trans_color">#00000000</color>
+
+    <color name="sdk_blue_press">#0c7dc4</color>
+    <color name="sdk_blue">#008be3</color>
+
+    <!--标题栏背景颜色及标题文字颜色-->
+    <color name="sdk_title_bar_bg_color">@color/sdk_blue</color>
+    <color name="sdk_title_bar_text_color">@color/sdk_white</color>
+    <!--按钮背景颜色-->
+    <color name="sdk_bg_btn_normal_color">@color/sdk_blue</color>
+    <color name="sdk_bg_btn_press_color">@color/sdk_blue_press</color>
+    <!--排队界面排队时间文字颜色-->
+    <color name="sdk_queue_time_color">@color/sdk_first_text_color</color>
+
+    <color name="sdk_colorPrimary">#1678ee</color>
+    <color name="sdk_colorPrimaryDark">#2a8eed</color>
+    <color name="sdk_colorAccent">#1678ee</color>
+</resources>

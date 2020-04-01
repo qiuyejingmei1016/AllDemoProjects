@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/sdk_recruit_title_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/sdk_title_bar_height"
+        android:background="@color/sdk_trans_color">
+
+    <TextView
+            android:id="@+id/sdk_title_text"
+            style="@style/sdk_title_bar_title_text"/>
+    <ImageButton
+            android:id="@+id/sdk_title_left_img_btn"
+            style="@style/sdk_title_bar_left_img_btn"
+            android:visibility="invisible"/>
+    <TextView
+            android:id="@+id/sdk_title_left_text"
+            style="@style/sdk_title_bar_left_text"
+            android:layout_toEndOf="@+id/sdk_title_left_img_btn"
+            android:layout_toRightOf="@+id/sdk_title_left_img_btn"/>
+    <ImageButton
+            android:id="@+id/sdk_title_right_img_btn"
+            style="@style/sdk_title_bar_right_img_btn"
+            android:visibility="invisible"/>
+</RelativeLayout>

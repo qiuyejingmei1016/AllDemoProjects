@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1678ee</color>
+    <!--<color name="colorPrimaryDark">#aaaaaa</color>-->
+    <color name="colorPrimaryDark">#008be3</color>
+    <color name="colorAccent">#1678ee</color>
+
+    <color name="blue_title_bar">#008be3</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="trans_back">#66000000</color>
+
+    <color name="white">#FFFFFF</color>
+</resources>
