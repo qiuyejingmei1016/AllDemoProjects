@@ -4,13 +4,14 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.customdialog.widget.ActionSheetDialog;
 import com.customdialog.widget.AlertDialog;
 
 import java.util.ArrayList;
+
+import example.com.showdialog.utils.ToastUtil;
 
 /**
  * package:example.com.showdialog
@@ -20,7 +21,6 @@ import java.util.ArrayList;
  */
 public class MainActivity extends Activity implements View.OnClickListener {
 
-    private Button btn1, btn2, btn3, btn4, btn5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,16 +30,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     private void initView() {
-        btn1 = (Button) findViewById(R.id.btn1);
-        btn2 = (Button) findViewById(R.id.btn2);
-        btn3 = (Button) findViewById(R.id.btn3);
-        btn4 = (Button) findViewById(R.id.btn4);
-        btn5 = (Button) findViewById(R.id.btn5);
-        btn1.setOnClickListener(this);
-        btn2.setOnClickListener(this);
-        btn3.setOnClickListener(this);
-        btn4.setOnClickListener(this);
-        btn5.setOnClickListener(this);
+        findViewById(R.id.btn1).setOnClickListener(this);
+        findViewById(R.id.btn2).setOnClickListener(this);
+        findViewById(R.id.btn3).setOnClickListener(this);
+        findViewById(R.id.btn4).setOnClickListener(this);
+        findViewById(R.id.btn5).setOnClickListener(this);
+        findViewById(R.id.btn6).setOnClickListener(this);
+        findViewById(R.id.btn7).setOnClickListener(this);
     }
 
     @Override
@@ -163,6 +160,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
                                 //填写事件
                             }
                         }).show();
+                break;
+
+            case R.id.btn6:
+                ToastUtil.showImageToast(this, "带图片的提示");
+                break;
+            case R.id.btn7:
+                ToastUtil.showTextToast(this, "默认提示样式");
                 break;
         }
     }

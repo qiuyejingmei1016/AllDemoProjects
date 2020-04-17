@@ -13,12 +13,8 @@ def apkName() {
 android {
     compileSdkVersion 28
     defaultConfig {
-        //测试版本包名
-//        applicationId "com.bairuitech.anychat.f2fvideo"
         minSdkVersion 15
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         //必须要保证所有的flavor 都属于同一个维度
@@ -39,49 +35,47 @@ android {
 
     productFlavors {
         //测试环境渠道
-        EnvironmentTest {
-            applicationId "com.bairuitech.anychat.f2fvideo"
+        TestEnvironment {
+            versionCode 3
+            versionName "1.0.3"
+            applicationId "com.bairuitech.anychat.f2fvideo1"
             //manifest里面的值
             manifestPlaceholders = [
                     APP_NAME     : "视频面对面(测试版本)",
                     CHANNEL_VALUE: "EnvironmentTest",
                     LOCATION_KEY : "1fbe22b2b2cf696ada6e6adc8115791e"]
-//            buildConfigField "boolean", "ENVIRONMENT_INTERNAL", "false"
+            buildConfigField "boolean", "ENVIRONMENT_INTERNAL", "false"
             buildConfigField("String", "BASE_URL", "\"http://120.76.74.249:18080\"")
         }
 
         //内测环境渠道
-        EnvironmentInternal {
-            applicationId "com.bairuitech.anychat.f2fvideo_internal_test"
+        InternalEnvironment {
+            versionCode 3
+            versionName "1.0.3"
+            applicationId "com.bairuitech.anychat.f2fvideo_internal_test1"
             //manifest里面的值
             manifestPlaceholders = [
                     APP_NAME     : "视频面对面(内测)",
                     CHANNEL_VALUE: "EnvironmentInternal",
                     LOCATION_KEY : "dc7a420e5d31d8c7428cbdec698f5335"]
-//            buildConfigField "boolean", "ENVIRONMENT_INTERNAL", "true"
+            buildConfigField "boolean", "ENVIRONMENT_INTERNAL", "true"
             buildConfigField("String", "BASE_URL", "\"http://120.76.74.249:18888\"")
         }
     }
-
-//    productFlavors.all {
-//        flavor -> flavor.manifestPlaceholders = [CHANNEL_VALUE: name]
-//    }
 
     applicationVariants.all { variant ->
         variant.outputs.all { output ->
             def outputFile = output.outputFile
             if (outputFile != null && outputFile.name.endsWith('.apk')) {
-//                def flavor = variant.productFlavors[0].name
-//                def apkName
-//                if (flavor.equals('Cloud')) {
-//                    apkName = "双录云视频组件云环境Demo";
-//                } else {
-//                    apkName = "双录云视频组件体验环境Demo";
-//                }
-
+                def flavor = variant.productFlavors[0].name
+                def apkName
+                if (flavor.equals('TestEnvironment')) {
+                    apkName = "视频面对面(测试版本)";
+                } else {
+                    apkName = "视频面对面(内测)";
+                }
                 def releaseTime = "${releaseTime()}"
-                def apkName = "${apkName()}"
-                def fileName = "${apkName}_Channel_${variant.productFlavors[0].name}_v${defaultConfig.versionName}_build_${releaseTime}.apk"
+                def fileName = "${apkName}_${flavor}_v${defaultConfig.versionName}_build_${releaseTime}.apk"
                 outputFileName = fileName
             }
         }

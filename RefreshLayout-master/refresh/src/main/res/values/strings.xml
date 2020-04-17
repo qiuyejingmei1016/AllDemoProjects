@@ -6,7 +6,7 @@
     <string name="header_release">释放立即刷新</string>
     <string name="header_refresh_finish">刷新完成</string>
     <string name="header_refresh_failure">刷新失败</string>
-    <string name="header_update">上次更新 M-d HH:mm</string>
+    <string name="header_update">上次更新 MM-dd HH:mm</string>
 
     <string name="footer_pulling">上拉加载更多</string>
     <string name="footer_release">释放立即加载</string>
