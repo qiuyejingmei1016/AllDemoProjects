@@ -1,0 +1,32 @@
+    //依据右上角为终点，执行缩放；以右上角为七点执行动画复原
+	private void animateWhenPlay(boolean isReset) {
+        ScaleAnimation scaleAni = null;
+        if (isReset) {
+            scaleAni = new ScaleAnimation(
+                    0.5f, Animation.RELATIVE_TO_SELF,
+                    0.5f, Animation.RELATIVE_TO_SELF,
+                    Animation.RELATIVE_TO_SELF, Animation.RELATIVE_TO_SELF,
+                    0, Animation.RELATIVE_TO_SELF);
+        } else {
+            scaleAni = new ScaleAnimation(
+                    Animation.RELATIVE_TO_SELF, 0.5f,
+                    Animation.RELATIVE_TO_SELF, 0.5f,
+                    Animation.RELATIVE_TO_SELF, Animation.RELATIVE_TO_SELF,
+                    Animation.RELATIVE_TO_SELF, 0);
+        }
+
+        //设置动画执行的时间，单位是毫秒
+        scaleAni.setDuration(800);
+        //使其可以填充效果从而不回到原地
+        scaleAni.setFillEnabled(true);
+        //不回到起始位置
+        scaleAni.setFillAfter(true);
+        // 设置动画重复次数
+        // -1或者Animation.INFINITE表示无限重复，正数表示重复次数，0表示不重复只播放一次
+        scaleAni.setRepeatCount(0);
+        // 设置动画模式（Animation.REVERSE设置循环反转播放动画,Animation.RESTART每次都从头开始）
+        scaleAni.setRepeatMode(Animation.REVERSE);
+
+        //启动动画
+        mOtherView.startAnimation(scaleAni);
+    }

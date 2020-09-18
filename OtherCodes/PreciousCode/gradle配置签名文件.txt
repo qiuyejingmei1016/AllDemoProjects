@@ -1,0 +1,41 @@
+  signKeyStore文件和app目录同一级别；
+  
+  signingConfigs {
+        release {
+            keyAlias 'yuyu'
+            keyPassword 'bairui_123'
+            storeFile file('../signKeyStore/anychat_yu')
+            storePassword 'bairui_123'
+        }
+        debug {
+            keyAlias 'yuyu'
+            keyPassword 'bairui_123'
+            storeFile file('../signKeyStore/anychat_yu')
+            storePassword 'bairui_123'
+        }
+    }
+	
+	
+	自定义打包样式：
+	//自定义打包时间
+	def releaseTime() {
+		return new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))
+	}
+
+	def apkName() {
+		return "AnyChat虚拟营业厅"
+	}
+	
+	//自定义打包apk名
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                def apkName = "${apkName()}";
+                def releaseTime = "${releaseTime()}"
+                def fileName = "${apkName}_build_${releaseTime}.apk"
+                outputFileName = fileName
+            }
+        }
+    }
+

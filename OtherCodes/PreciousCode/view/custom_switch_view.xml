@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <include android:id="@+id/open" layout="@layout/switch_on_view"/>
+    <include android:id="@+id/close" layout="@layout/switch_off_view"/>
+
+</RelativeLayout>

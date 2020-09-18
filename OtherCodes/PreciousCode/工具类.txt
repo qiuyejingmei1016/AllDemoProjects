@@ -1,0 +1,9 @@
+	//集合转jsonArray
+    JsonArray jsonArray = new Gson().toJsonTree(anyChatRecordTagData, new TypeToken<List<AnyChatRecordTagData>>() {
+    }.getType()).getAsJsonArray();
+
+    String jsonExtraParam = new Gson().toJson(anyChatRecordTagData);
+    JSONArray jsonArray = new JSONArray(jsonExtraParam);
+
+    JSONObject jsonObject = new JSONObject();
+    jsonObject.put("list",jsonArray);

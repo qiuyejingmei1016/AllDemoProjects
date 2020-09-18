@@ -1,0 +1,46 @@
+
+    public void rsaTest() {
+        //自己构建公钥私钥对
+//        Map<String, String> keyMap = RSAUtils2.createKeys(1024);
+//        String publicKey = keyMap.get("publicKey");
+//        String privateKey = keyMap.get("privateKey");
+
+        //RSA公钥
+        String publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC2Y8navZTx0MEe3iuuKM3A/EHSUOSBjBxArt4USuNto9xSJyy1T/AvcF6A2Wkmvm47CSRqnekSCOsaUMSgH4koP6mcATzSZk0VcEQOc2j0AVqOZoxLXHH6MfqKCBkOi1+Y9wfi2P/9ARdhicmzWtQKGQfK+erK0QCWpYOixu8KCQIDAQAB";
+        //RSA私钥
+        String privateKey = "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBALZjydq9lPHQwR7eK64ozcD8QdJQ5IGMHECu3hRK422j3FInLLVP8C9wXoDZaSa+bjsJJGqd6RII6xpQxKAfiSg/qZwBPNJmTRVwRA5zaPQBWo5mjEtccfox+ooIGQ6LX5j3B+LY//0BF2GJybNa1AoZB8r56srRAJalg6LG7woJAgMBAAECgYBag7NNRwB/8WWl+AQdbkqOF6JiyZpdYDc1MpMr5u5vHv7cFmztnjpIkK+Vqk+w1pjF24ejEbL1LE/gw2yROpVJ+bHj8VdYnz45v8Q/DuyFirx6kNR24a/2dJBc8J92diK0ywrwwKLU8t3JGTjYkeZt7cBaNgW3fxSAbkKddZuZwQJBANpXCYEuq0CGwd5Ami9MQuIOZRtEf0R+JZ/aTv6A9omp9wuLrgf062ZvQwhyKdbyts5XAE1WlZCO9hAEAr7ey3UCQQDV2VgiVOocPnaYzGWp76JMhlWVFm6RXZXhkgj4LhfGEZtjiZa8jNXNQx4KcP51T43Bxz2Ky/R7Yfu9vj/4gHXFAkA/O53BD+cA1QYoe8UrlYZ5OXoGn5vMFkyHMw5VnrvHurWVXmqUW1YhYG+lboq3eat/rqqju0OtjfmtQbwZ0yRRAkB7ZDCVhrea2nPmELJsjqfwTebd4paj7AMKqA/i2/29vPUTRxWh8AWBrcOMtMwudlvOPx+EkdCczNnMDxWsVrsdAkEA1M9zDd+1xg0qmoMjr4BRNdKJAk2SCrgS7FmPC3ejWaJf3IJB5AlOLocTpitaVVQG8OrZnCX3P+BvyTtZJu1OKA==";
+
+        Log.e("公钥 ", publicKey);
+        Log.e("私钥 ", privateKey);
+
+        Log.e("公钥加密——私钥解密", " start");
+        String appId = "dd7eda52-d1f9-4fa2-ae46-a8b3a4410d91";
+        String version = "v1.0";
+
+        String timeStamp = String.valueOf(System.currentTimeMillis());
+        Log.e("=====时间戳  ", timeStamp);
+
+        String sign = version + appId + timeStamp;
+
+        try {
+            String encryptContent = MD5Utils.encodeMD5(sign);
+            Log.e("要加密的明文内容 ", encryptContent);
+
+            //公钥加密
+            String publicEncrypt = RSAUtils.publicEncrypt(encryptContent, RSAUtils.getPublicKey(publicKey));
+            Log.e("公钥加密后密文 ", publicEncrypt);
+            //私钥解密
+            String privateDecrypt = RSAUtils.privateDecrypt(publicEncrypt, RSAUtils.getPrivateKey(privateKey));
+            Log.e("私钥解密解密后内容 ", privateDecrypt);
+
+            //私钥加密
+            String privateEncrypt = RSAUtils.privateEncrypt(encryptContent, RSAUtils.getPrivateKey(privateKey));
+            Log.e("私钥加密后密文：", privateEncrypt);
+            //公钥解密
+            String publicDecrypt = RSAUtils.publicDecrypt(privateEncrypt, RSAUtils.getPublicKey(publicKey));
+            Log.e("公钥解密解密后内容:  ", publicDecrypt);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.e("Exception:  ", e.toString());
+        }
+    }
