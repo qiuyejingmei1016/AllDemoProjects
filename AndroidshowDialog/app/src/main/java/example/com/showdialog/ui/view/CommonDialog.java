@@ -1,4 +1,4 @@
-package example.com.showdialog.view;
+package example.com.showdialog.ui.view;
 
 import android.app.Dialog;
 import android.content.Context;

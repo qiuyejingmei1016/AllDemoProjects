@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+>
+
+    <ImageView
+            android:id="@+id/iv_icon_others"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:src="@mipmap/ico_avatar_in_pie"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+    <TextView
+            android:id="@+id/tv_chat_other_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:layout_marginRight="@dimen/dp_8"
+            android:layout_toRightOf="@+id/iv_icon_others"
+            android:background="@drawable/ico_chat_frame"
+            android:gravity="center_vertical"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="gone"
+            tools:text="您好！"
+            tools:visibility="visible"
+    />
+
+    <ImageView
+            android:id="@+id/iv_icon_myself"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_12"
+            android:src="@mipmap/ico_avatar_in_pie_white"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+    <TextView
+            android:id="@+id/tv_chat_myself_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:layout_marginRight="@dimen/dp_8"
+            android:layout_toLeftOf="@+id/iv_icon_myself"
+            android:background="@drawable/ico_chat_frame_white"
+            android:gravity="center_vertical"
+            android:textColor="@color/first_text_color"
+            android:textSize="14sp"
+            android:visibility="gone"
+            tools:text="您好！"
+            tools:visibility="visible"
+    />
+
+
+</RelativeLayout>

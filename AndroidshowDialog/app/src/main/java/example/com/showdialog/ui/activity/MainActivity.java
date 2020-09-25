@@ -1,6 +1,7 @@
-package example.com.showdialog;
+package example.com.showdialog.ui.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,6 +12,7 @@ import com.customdialog.widget.AlertDialog;
 
 import java.util.ArrayList;
 
+import example.com.showdialog.R;
 import example.com.showdialog.utils.ToastUtil;
 
 /**
@@ -37,6 +39,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         findViewById(R.id.btn5).setOnClickListener(this);
         findViewById(R.id.btn6).setOnClickListener(this);
         findViewById(R.id.btn7).setOnClickListener(this);
+        findViewById(R.id.btn8).setOnClickListener(this);
     }
 
     @Override
@@ -167,6 +170,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.btn7:
                 ToastUtil.showTextToast(this, "默认提示样式");
+                break;
+            case R.id.btn8:
+                Intent intent = new Intent(this, ListActivity.class);
+                startActivity(intent);
                 break;
         }
     }
