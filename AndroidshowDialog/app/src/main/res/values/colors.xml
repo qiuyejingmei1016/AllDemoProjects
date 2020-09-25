@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#FFFFFF</color>
+    <color name="back_color">#000000</color>
+    <color name="back_color1">#2f2f2f</color>
+    <color name="first_text_color">#333333</color>
+    <color name="second_text_color">#aaaaaa</color>
+    <color name="third_text_color">#555555</color>
+    <color name="back_hint_color">#DCDCDC</color>
+    <color name="trans">#00000000</color>
+    <color name="light_dark">#7f000000</color>
+
+    <color name="bg_content">#f2f4f9</color>
+
+    <color name="line_color">#dddddd</color>
+
+    <color name="red">#FF2231</color>
+    <color name="green">#00C500</color>
+
+    <color name="tip_text_color">#666666</color>
+
+
+    <color name="blue_of">#008be3</color>
+
+
+    <!--image_picker_color-->
+    <color name="sdk_white">#FFFFFF</color>
+    <color name="sdk_back_color">#000000</color>
+    <color name="sdk_tool_bar_color">#303030</color>
+    <color name="sdk_bg_color">#303030</color>
+    <color name="sdk_picker_text_bg_gray">#99000000</color>
+    <color name="sdk_line_color">#dddddd</color>
+    <color name="sdk_preview_mock">#9a000000</color>
+    <color name="sdk_color_afff">#afff</color>
+</resources>
